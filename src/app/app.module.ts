@@ -9,10 +9,17 @@ import {CdkTableModule} from '@angular/cdk/table';
 import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {FakeBackendService} from './services/fake-backend.service';
 import {HttpClientModule} from '@angular/common/http';
+import { DepartmentComponent } from './department/department.component';
+import { HeaderComponent } from './header/header.component';
+import { EmployeeComponent } from './employee/employee.component';
+import {APP_BASE_HREF} from '@angular/common';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DepartmentComponent,
+    HeaderComponent,
+    EmployeeComponent
   ],
   imports: [
     BrowserModule,
