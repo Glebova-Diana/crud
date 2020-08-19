@@ -1,24 +1,19 @@
-<p>department-new works!</p>
 <form action="" class="form" [formGroup]="newDepartmentForm" (ngSubmit)="addDepartment()">
   <label>
-    <input type="number" formControlName="id">
-    Id
-  </label>
-  <label>
-    <input type="text" formControlName="name">
     Department Name
+    <input type="text" formControlName="name">
   </label>
   <label>
-    <input type="date" formControlName="foundationDate">
     Date of foundation
+    <input type="date" formControlName="foundationDate">
   </label>
   <label>
-    <input type="text" formControlName="founder">
     Founder
+    <input type="text" formControlName="founder">
   </label>
   <label>
-    <input type="number" formControlName="employeesNumbers">
     Numbers of Employees
+    <input type="number" formControlName="employeesNumbers">
   </label>
   <button type="submit" routerLink="/department"
           [disabled]="newDepartmentForm.invalid">Add new department</button>

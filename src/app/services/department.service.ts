@@ -1,30 +1,32 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {environment} from '../../environments/environment';
 
 export interface tableData {
   id?: number;
   name: string;
   foundationDate: string;
   founder: string;
+  employeesNumbers: number;
 }
 
 @Injectable({
   providedIn: 'root'
 })
-export class CrudService {
-  baseUrl = 'http://mybackend.com/api/';
-  endUrl = 'department';
+export class DepartmentService {
+  url = `${environment.baseUrl}/department`;
 
   constructor(private http: HttpClient) {
   }
 
   fetchTableData(): Observable<tableData> {
-    return this.http.get<tableData>(this.baseUrl + this.endUrl);
+    return this.http.get<tableData>(this.url) as Observable<tableData>;
   }
 
-  addTableData(newData: tableData): Observable<tableData> {
-    return this.http.post<tableData>(this.baseUrl + this.endUrl, newData);
+  addTableData(newData): Observable<tableData> {
+    console.log('newData', newData);
+    return this.http.post(this.url, newData) as Observable<tableData>;
   }
 //
 // // Gets all tasks

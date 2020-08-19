@@ -1,16 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import {CrudService} from '../services/crud.service';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {DepartmentService} from '../services/department.service';
+import {MatPaginator} from '@angular/material/paginator';
 
 @Component({
   selector: 'app-department',
   templateUrl: './department.component.html',
   styleUrls: ['./department.component.css']
 })
-export class DepartmentComponent implements OnInit {
+export class DepartmentComponent implements OnInit, AfterViewInit {
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   displayedColumns: string[] = ['id', 'name', 'foundationDate', 'founder'];
   dataSource;
 
-  constructor(private crudService: CrudService) {}
+  constructor(private crudService: DepartmentService) {}
 
   ngOnInit(): void {
     this.fetchTableData();
@@ -23,5 +25,9 @@ export class DepartmentComponent implements OnInit {
         console.log('response', response);
         console.log('dataSource', this.dataSource);
       });
+  }
+
+  ngAfterViewInit(): void {
+      // this.dataSource.paginator = this.paginator;
   }
 }

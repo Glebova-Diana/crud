@@ -1,0 +1,36 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.form label {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+.form input {
+  width: 60%;
+  margin-left: 20px;
+}
+
+.form button {
+  align-self: flex-end;
+  width: 61%;
+  margin-left: 20px;
+  padding: 10px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

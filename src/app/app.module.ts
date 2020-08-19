@@ -12,9 +12,9 @@ import {HttpClientModule} from '@angular/common/http';
 import { DepartmentComponent } from './department/department.component';
 import { HeaderComponent } from './header/header.component';
 import { EmployeeComponent } from './employee/employee.component';
-import {APP_BASE_HREF} from '@angular/common';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
+import {MatPaginatorModule} from '@angular/material/paginator';
 import { DepartmentNewComponent } from './department-new/department-new.component';
 import { EmployeeNewComponent } from './employee-new/employee-new.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -38,6 +38,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     InMemoryWebApiModule.forRoot(FakeBackendService),
     MatMenuModule,
     MatButtonModule,
+    MatPaginatorModule,
     FormsModule,
     ReactiveFormsModule
   ],
