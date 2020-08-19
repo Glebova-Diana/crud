@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.menu a {
+  padding: 10px;
+
+  font-weight: 500;
+  color: grey;
+  text-decoration: none;
+  transition: all .4s;
+}
+
+.menu a:hover,
+.menu a.active {
+  color: white;
+  background: grey;
+}
+
+.menu a:hover,
+.menu a.active {
+  color: white;
+}

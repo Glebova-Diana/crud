@@ -14,13 +14,17 @@ export interface tableData {
 })
 export class CrudService {
   baseUrl = 'http://mybackend.com/api/';
-  departmentUrl = 'department';
+  endUrl = 'department';
 
   constructor(private http: HttpClient) {
   }
 
   fetchTableData(): Observable<tableData> {
-    return this.http.get<tableData>(this.baseUrl + this.departmentUrl);
+    return this.http.get<tableData>(this.baseUrl + this.endUrl);
+  }
+
+  addTableData(newData: tableData): Observable<tableData> {
+    return this.http.post<tableData>(this.baseUrl + this.endUrl, newData);
   }
 //
 // // Gets all tasks

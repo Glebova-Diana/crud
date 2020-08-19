@@ -13,13 +13,20 @@ import { DepartmentComponent } from './department/department.component';
 import { HeaderComponent } from './header/header.component';
 import { EmployeeComponent } from './employee/employee.component';
 import {APP_BASE_HREF} from '@angular/common';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
+import { DepartmentNewComponent } from './department-new/department-new.component';
+import { EmployeeNewComponent } from './employee-new/employee-new.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     DepartmentComponent,
     HeaderComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    DepartmentNewComponent,
+    EmployeeNewComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +35,11 @@ import {APP_BASE_HREF} from '@angular/common';
     MatTableModule,
     CdkTableModule,
     HttpClientModule,
-    InMemoryWebApiModule.forRoot(FakeBackendService)
+    InMemoryWebApiModule.forRoot(FakeBackendService),
+    MatMenuModule,
+    MatButtonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

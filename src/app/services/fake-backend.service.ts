@@ -12,25 +12,29 @@ export class FakeBackendService implements InMemoryDbService {
         id: 1,
         name: 'Department 1',
         foundationDate: '25 jan 20',
-        founder: 'Tanner Cooper'
+        founder: 'Tanner Cooper',
+        employeesNumbers: 6
       },
       {
         id: 2,
         name: 'Department 2',
         foundationDate: '22 jan 18',
-        founder: 'Jonathan Jenkins'
+        founder: 'Jonathan Jenkins',
+        employeesNumbers: 4
       },
       {
         id: 3,
         name: 'Department 3',
         foundationDate: '14 feb 18',
-        founder: 'Dax Gray'
+        founder: 'Dax Gray',
+        employeesNumbers: 2
       },
       {
         id: 4,
         name: 'Department 4',
         foundationDate: '20 jul 19',
-        founder: 'Irving Reed'
+        founder: 'Irving Reed',
+        employeesNumbers: 5
       }
     ];
     return {department};
