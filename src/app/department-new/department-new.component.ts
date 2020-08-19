@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {DepartmentService} from '../services/department.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-department-new',
@@ -10,7 +11,7 @@ import {DepartmentService} from '../services/department.service';
 export class DepartmentNewComponent implements OnInit {
   newDepartmentForm: FormGroup;
 
-  constructor(private crudServise: DepartmentService) {
+  constructor(private crudServise: DepartmentService, protected readonly router: Router) {
   }
 
   ngOnInit(): void {
@@ -33,10 +34,10 @@ export class DepartmentNewComponent implements OnInit {
   addDepartment() {
     this.crudServise.addTableData(
       this.newDepartmentForm.value
-    )
-      .subscribe(
+    ).subscribe(
         data => {
           console.log('resp data', data);
+          this.router.navigateByUrl('/department');
         },
         error => {
           console.log('error', error);

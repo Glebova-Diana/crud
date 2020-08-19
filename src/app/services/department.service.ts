@@ -3,12 +3,19 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {environment} from '../../environments/environment';
 
-export interface tableData {
+export interface TableData {
   id?: number;
   name: string;
   foundationDate: string;
   founder: string;
   employeesNumbers: number;
+  employees: [
+    {
+      name: string;
+      post: string;
+      age: number;
+    }
+  ];
 }
 
 @Injectable({
@@ -20,39 +27,12 @@ export class DepartmentService {
   constructor(private http: HttpClient) {
   }
 
-  fetchTableData(): Observable<tableData> {
-    return this.http.get<tableData>(this.url) as Observable<tableData>;
+  fetchTableData(): Observable<any> {
+    return this.http.get<TableData[]>(this.url) as Observable<TableData[]>;
   }
 
-  addTableData(newData): Observable<tableData> {
+  addTableData(newData): Observable<TableData> {
     console.log('newData', newData);
-    return this.http.post(this.url, newData) as Observable<tableData>;
+    return this.http.post(this.url, newData) as Observable<TableData>;
   }
-//
-// // Gets all tasks
-//   getTasks() {
-//     return this.http
-//       .get(this.baseUrl + this.tasksEndpoint)
-//       .map(res => res.json());
-//   } // getTasks
-// // Creates a task
-//   createTask(task) {
-//     return this.http
-//       .post(this.baseUrl + this.tasksEndpoint, task)
-//       .map(res => res.json());
-//   } // createTask
-// // Updates a Task
-//   updateTask(update) {
-//     return this.http
-//       .put(this.baseUrl + this.tasksEndpoint, update)
-//       .pipe(
-//         map(res => res.json())
-//       );
-//   } // updateTask
-// // Deletes a Task
-//   deleteTask(taskId) {
-//     return this.http
-//       .delete(`${this.baseUrl + this.tasksEndpoint}/${taskId}`)
-//       .map(res => res.json());
-//   } // deleteTask
 }
