@@ -1,14 +1,8 @@
 <header class="header">
   <nav class="menu">
-    <ul>
+    <ul *ngIf="isDepartment">
       <li><a routerLink="/department" routerLinkActive="active">Department</a></li>
       <li><a routerLink="/employee" routerLinkActive="active">Employee</a></li>
     </ul>
   </nav>
-  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-  <!--#enddocregion mat-menu-trigger-for -->
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item routerLink="/department">Department</button>
-    <button mat-menu-item routerLink="/employee">Employee</button>
-  </mat-menu>
 </header>

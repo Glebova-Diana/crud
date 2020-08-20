@@ -19,13 +19,25 @@ export interface EmployeeTableData {
   providedIn: 'root'
 })
 export class EmployeeService {
-  url = `${environment.baseUrl}/department`;
+  url = `${environment.baseUrl}`;
 
   constructor(private http: HttpClient) {
   }
 
   fetchTableData(): Observable<EmployeeTableData> {
-    return this.http.get<EmployeeTableData>(this.url) as Observable<EmployeeTableData>;
+    return this.http.get<EmployeeTableData>(`${this.url}/department`) as Observable<EmployeeTableData>;
+  }
+
+  getEmployees() {
+    return this.http.get(`${this.url}/employees`);
+  }
+
+  getEmployee(id: number) {
+    return this.http.get(`${this.url}/employees/${id}`) as Observable<any>;
+  }
+
+  getEmployeeDepartment(departmentId: number) {
+    return this.http.get(`${this.url}/department/${departmentId}`);
   }
 
   addTableData(newData): Observable<EmployeeTableData> {

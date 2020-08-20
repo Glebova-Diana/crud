@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {DepartmentService} from '../services/department.service';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  public isDepartment: boolean;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private departmentService: DepartmentService) {
   }
 
+  ngOnInit(): void {
+    this.fetchTableData();
+  }
+
+  fetchTableData() {
+    this.departmentService.fetchTableData()
+      .subscribe(
+        department => {
+          this.isDepartment = department.length !== 0;
+        }
+      );
+  }
 }

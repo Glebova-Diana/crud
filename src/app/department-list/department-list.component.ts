@@ -14,16 +14,33 @@ export class DepartmentListComponent implements OnInit, AfterViewInit {
   dataSource;
 
   constructor(
-    private crudService: DepartmentService,
+    private departmentService: DepartmentService,
     protected readonly router: Router
-    ) {}
+  ) {
+  }
 
   ngOnInit(): void {
     this.fetchTableData();
+    this.departmentService.getDepartments().subscribe(
+      data => {
+        console.log('departments', data);
+      }
+    );
+    this.departmentService.getDepartment(1).subscribe(
+      data => {
+        console.log('department', data);
+      }
+    );
+
+    this.departmentService.getDepartmentEmployees(1).subscribe(
+      data => {
+        console.log('department employees', data);
+      }
+    );
   }
 
   fetchTableData() {
-    this.crudService.fetchTableData()
+    this.departmentService.fetchTableData()
       .subscribe(response => {
         this.dataSource = response;
         console.log('response', response);
@@ -32,7 +49,7 @@ export class DepartmentListComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-      // this.dataSource.paginator = this.paginator;
+    // this.dataSource.paginator = this.paginator;
   }
 
   redirectToDeprtment(element) {
