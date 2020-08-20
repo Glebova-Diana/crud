@@ -3,14 +3,11 @@ import {environment} from '../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
-export interface TableData {
+export interface EmployeeTableData {
   id?: number;
-  // name: string;
-  // foundationDate: string;
-  // founder: string;
-  // employeesNumbers: number;
   employees: [
     {
+      id?: number,
       name: string;
       post: string;
       age: number;
@@ -27,12 +24,12 @@ export class EmployeeService {
   constructor(private http: HttpClient) {
   }
 
-  fetchTableData(): Observable<TableData> {
-    return this.http.get<TableData>(this.url) as Observable<TableData>;
+  fetchTableData(): Observable<EmployeeTableData> {
+    return this.http.get<EmployeeTableData>(this.url) as Observable<EmployeeTableData>;
   }
 
-  addTableData(newData): Observable<TableData> {
+  addTableData(newData): Observable<EmployeeTableData> {
     console.log('newData', newData);
-    return this.http.post(this.url, newData) as Observable<TableData>;
+    return this.http.post(this.url, newData) as Observable<EmployeeTableData>;
   }
 }

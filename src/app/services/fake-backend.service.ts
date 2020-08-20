@@ -16,31 +16,37 @@ export class FakeBackendService implements InMemoryDbService {
         employeesNumbers: 6,
         employees: [
           {
+            id: 10,
             name: 'Ayda Shaffer',
             post: 'Developer',
             age: 20
           },
           {
+            id: 11,
             name: 'Iqra Adkins',
             post: 'Developer',
             age: 25
           },
           {
+            id: 12,
             name: 'Abbigail Reader',
             post: 'Developer',
             age: 40
           },
           {
+            id: 13,
             name: 'Meghan Preece',
             post: 'Developer',
             age: 40
           },
           {
+            id: 14,
             name: 'Dixie Morgan',
             post: 'Developer',
             age: 40
           },
           {
+            id: 15,
             name: 'Andreas Adam',
             post: 'Developer',
             age: 40
@@ -55,21 +61,25 @@ export class FakeBackendService implements InMemoryDbService {
         employeesNumbers: 4,
         employees: [
           {
+            id: 16,
             name: 'Uwais Livingston',
             post: 'Developer',
             age: 18
           },
           {
+            id: 17,
             name: 'Momina Pearson',
             post: 'Developer',
             age: 27
           },
           {
+            id: 18,
             name: 'Agnes Herman',
             post: 'Developer',
             age: 40
           },
           {
+            id: 19,
             name: 'Finnley Mcfadden',
             post: 'Developer',
             age: 26
@@ -84,11 +94,13 @@ export class FakeBackendService implements InMemoryDbService {
         employeesNumbers: 2,
         employees: [
           {
+            id: 20,
             name: 'Faizah Vasquez',
             post: 'Developer',
             age: 38
           },
           {
+            id: 21,
             name: 'Iqra Adkins',
             post: 'Ricky Burn',
             age: 22
@@ -103,26 +115,31 @@ export class FakeBackendService implements InMemoryDbService {
         employeesNumbers: 5,
         employees: [
           {
+            id: 22,
             name: 'Jonas Flynn',
             post: 'Developer',
             age: 50
           },
           {
+            id: 23,
             name: 'Brittney Bright',
             post: 'Developer',
             age: 48
           },
           {
+            id: 24,
             name: 'Piper Talley',
             post: 'Developer',
             age: 37
           },
           {
+            id: 25,
             name: 'Talitha Oneal',
             post: 'Developer',
             age: 48
           },
           {
+            id: 26,
             name: 'Ferne Rollins',
             post: 'Developer',
             age: 37

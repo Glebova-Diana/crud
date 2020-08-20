@@ -9,24 +9,28 @@ import {CdkTableModule} from '@angular/cdk/table';
 import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {FakeBackendService} from './services/fake-backend.service';
 import {HttpClientModule} from '@angular/common/http';
-import { DepartmentComponent } from './department/department.component';
+import { DepartmentListComponent } from './department-list/department-list.component';
 import { HeaderComponent } from './header/header.component';
-import { EmployeeComponent } from './employee/employee.component';
+import { EmployeeListComponent } from './employee-list/employee-list.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { DepartmentNewComponent } from './department-new/department-new.component';
 import { EmployeeNewComponent } from './employee-new/employee-new.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { DepartmentComponent } from './department-list/department/department.component';
+import { EmployeeComponent } from './employee-list/employee/employee.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DepartmentComponent,
+    DepartmentListComponent,
     HeaderComponent,
-    EmployeeComponent,
+    EmployeeListComponent,
     DepartmentNewComponent,
-    EmployeeNewComponent
+    EmployeeNewComponent,
+    DepartmentComponent,
+    EmployeeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,18 +1,22 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {DepartmentService} from '../services/department.service';
 import {MatPaginator} from '@angular/material/paginator';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-department',
-  templateUrl: './department.component.html',
-  styleUrls: ['./department.component.css']
+  templateUrl: './department-list.component.html',
+  styleUrls: ['./department-list.component.css']
 })
-export class DepartmentComponent implements OnInit, AfterViewInit {
+export class DepartmentListComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   displayedColumns: string[] = ['id', 'name', 'foundationDate', 'founder'];
   dataSource;
 
-  constructor(private crudService: DepartmentService) {}
+  constructor(
+    private crudService: DepartmentService,
+    protected readonly router: Router
+    ) {}
 
   ngOnInit(): void {
     this.fetchTableData();
@@ -29,5 +33,9 @@ export class DepartmentComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
       // this.dataSource.paginator = this.paginator;
+  }
+
+  redirectToDeprtment(element) {
+    this.router.navigateByUrl(`/department/${element}`);
   }
 }

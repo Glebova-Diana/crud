@@ -2,7 +2,7 @@
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
   <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef> Id. </th>
+    <th mat-header-cell *matHeaderCellDef> Id </th>
     <td mat-cell *matCellDef="let element"> {{element.id}} </td>
   </ng-container>
 
@@ -19,6 +19,24 @@
   <ng-container matColumnDef="founder">
     <th mat-header-cell *matHeaderCellDef> Founder </th>
     <td mat-cell *matCellDef="let element"> {{element.founder}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="employeesNumbers">
+    <th mat-header-cell *matHeaderCellDef> Numbers of employees </th>
+    <td mat-cell *matCellDef="let element"> {{element.employeesNumbers}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="employees">
+    <th mat-header-cell *matHeaderCellDef> Employees </th>
+    <td mat-cell *matCellDef="let element">
+      <ul>
+        <li *ngFor="let employee of element.employees">
+          <p>Name: {{employee.name}}</p>
+          <p>Post: {{employee.post}}</p>
+          <p>Age: {{employee.age}}</p>
+        </li>
+      </ul>
+    </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
