@@ -2,6 +2,7 @@ import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {DepartmentService} from '../services/department.service';
 import {Router} from '@angular/router';
+import {EmployeeService} from '../services/employee.service';
 
 @Component({
   selector: 'app-employee',
@@ -15,12 +16,23 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
 
   constructor(
     private crudService: DepartmentService,
+    private employeeService: EmployeeService,
     protected readonly router: Router
-    ) {
+  ) {
   }
 
   ngOnInit(): void {
     this.fetchTableData();
+    this.employeeService.getEmployees().subscribe(
+      data => {
+        console.log('employees', data);
+      }
+    );
+    this.employeeService.getEmployee(0).subscribe(
+      data => {
+        console.log('1 employee', data);
+      }
+    );
   }
 
   fetchTableData() {

@@ -7,7 +7,47 @@ import {InMemoryDbService} from 'angular-in-memory-web-api';
 
 export class FakeBackendService implements InMemoryDbService {
   createDb() {
-    let department = [
+    const departments = [
+      {
+        id: 1,
+        name: 'Department 1',
+        foundationDate: '25 jan 20',
+        founder: 'Tanner Cooper',
+        employeesNumbers: 6,
+      },
+      {
+        id: 2,
+        name: 'Department 2',
+        foundationDate: '22 jan 18',
+        founder: 'Jonathan Jenkins',
+        employeesNumbers: 4,
+      },
+    ];
+
+    const employees = [
+      {
+        id: 0,
+        name: 'Ayda Shaffer',
+        post: 'Developer',
+        age: 20,
+        departmentId: 1
+      },
+      {
+        id: 1,
+        name: 'Iqra Adkins',
+        post: 'Developer',
+        age: 25,
+        departmentId: 2
+      },
+      {
+        id: 2,
+        name: 'Abbigail Reader',
+        post: 'Developer',
+        age: 40,
+        departmentId: 1
+      },
+    ];
+    const department = [
       {
         id: 1,
         name: 'Department 1',
@@ -147,6 +187,6 @@ export class FakeBackendService implements InMemoryDbService {
         ]
       }
     ];
-    return {department};
+    return {department, departments, employees};
   }
 }
